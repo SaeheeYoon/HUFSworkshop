@@ -20,61 +20,7 @@
 
 from PIL import Image, ImageDraw, ImageFont
 
-# 배너 크기 설정
-banner_width = 1200
-banner_height = 400
-
-# 배경색 설정
-background_color = (240, 248, 255)  # 연한 하늘색 (Alice Blue)
-
-# 배너 생성
-banner = Image.new("RGB", (banner_width, banner_height), background_color)
-draw = ImageDraw.Draw(banner)
-
-# 폰트 설정
-try:
-    title_font = ImageFont.truetype("arial.ttf", 80)  # 제목 폰트
-    subtitle_font = ImageFont.truetype("arial.ttf", 50)  # 부제목 폰트
-except IOError:
-    title_font = ImageFont.load_default()
-    subtitle_font = ImageFont.load_default()
-
-# 텍스트 설정
-title_text = "Lesson Plan"
-subtitle_text = "Interactive English Learning"
-
-# 텍스트 색상
-title_color = (25, 25, 112)  # Midnight Blue
-subtitle_color = (0, 0, 0)  # Black
-
-# 텍스트 위치 계산
-title_width, title_height = draw.textsize(title_text, font=title_font)
-subtitle_width, subtitle_height = draw.textsize(subtitle_text, font=subtitle_font)
-
-title_position = ((banner_width - title_width) // 2, 100)
-subtitle_position = ((banner_width - subtitle_width) // 2, 220)
-
-# 텍스트 추가
-draw.text(title_position, title_text, fill=title_color, font=title_font)
-draw.text(subtitle_position, subtitle_text, fill=subtitle_color, font=subtitle_font)
-
-# 꾸미기 (상단과 하단의 장식 선)
-line_color = (70, 130, 180)  # Steel Blue
-line_thickness = 5
-draw.line(
-    [(50, 50), (banner_width - 50, 50)], fill=line_color, width=line_thickness
-)
-draw.line(
-    [(50, banner_height - 50), (banner_width - 50, banner_height - 50)],
-    fill=line_color,
-    width=line_thickness,
-)
-
-# 배너 저장
-banner.save("lesson_plan_banner.jpg")
-
-# 배너 보기
-banner.show()
+![Final Banner](https://chatgpt.com/c/6750d23e-5360-8013-aa53-33ae44979f5e)
 
 ## Overview
 This lesson plan is designed for middle school students and focuses on enhancing listening and writing skills through interactive activities using Gradio and Python coding. The lesson is based on the story "The Guardian's Secret."
