@@ -15,6 +15,92 @@
 
 ## Useful Links
 |💠[Emoji](https://gist.github.com/rxaviers/7360908) | 💠[ProjectGuide](https://github.com/MK316/Spring2024/blob/main/DLTESOL/project/README.md) | 💠[Reading material](https://raw.githubusercontent.com/MK316/Spring2024/main/DLTESOL/project/story02.txt) | 💠[CodePage](https://github.com/ShieldEdu/G4-finalproject/blob/main/FPG04.ipynb) | 💠 [APP#1-Wordcloud](https://huggingface.co/spaces/teatwots/wordcloud) | 💠 [APP#2-TTS-listening](https://huggingface.co/spaces/englissi/gstesolfinallistening) | 💠 [APP#3-Cloze test](https://huggingface.co/spaces/englissi/gstesolclozetest) | 💠 [APP#4-Sequencing app](https://huggingface.co/spaces/teatwots/sequencing) | 💠 [APP#5-Grammar Checker](https://huggingface.co/spaces/teatwots/grammarchecking)  | 
+# Import required libraries
+import gradio as gr  # Assuming Gradio is used for interactive apps
+import time  # For timing activities
+
+# Lesson Plan Implementation
+
+# Step 1: Listening Activity (35 minutes)
+
+# Pre-Listening Activity: Learning New Words
+def pre_listening_vocabulary():
+    """
+    Introduce new vocabulary using a word cloud.
+    """
+    print("Displaying Word Cloud...")
+    # Code to generate and display the word cloud
+    wordcloud_app = gr.Interface.load("huggingface-project-name/wordcloud-app")  # Replace with actual Gradio app name
+    wordcloud_app.launch()
+    time.sleep(10 * 60)  # Activity duration: 10 minutes
+
+# While-Listening Activity: Cloze Exercise
+def while_listening():
+    """
+    Enhance listening comprehension using TTS and a cloze exercise.
+    """
+    print("Playing Audio File and Conducting Cloze Exercise...")
+    tts_app = gr.Interface.load("huggingface-project-name/tts-app")  # Replace with actual Gradio app name
+    cloze_app = gr.Interface.load("huggingface-project-name/cloze-app")  # Replace with actual Gradio app name
+    
+    # Launch TTS App
+    tts_app.launch()
+    time.sleep(15 * 60)  # Activity duration: 15 minutes
+    
+    # Launch Cloze App
+    cloze_app.launch()
+
+# After-Listening Activity: Sequence the Story
+def after_listening():
+    """
+    Develop sequencing skills by arranging images.
+    """
+    print("Sequencing Story Images...")
+    sequence_app = gr.Interface.load("huggingface-project-name/image-sequence-app")  # Replace with actual Gradio app name
+    sequence_app.launch()
+    time.sleep(10 * 60)  # Activity duration: 10 minutes
+
+# Step 2: Writing Activity (20 minutes)
+def writing_activity():
+    """
+    Foster creative writing using a prompt and a writing checker tool.
+    """
+    print("Starting Writing Activity...")
+    writing_checker_app = gr.Interface.load("huggingface-project-name/writing-checker-app")  # Replace with actual Gradio app name
+    # Writing prompt
+    prompt = """
+    In the story, Alex and his friends discovered an ancient treasure in Whispering Hollow 
+    and decided to donate the artifacts to the local museum. In the past, did you have a similar experience where you found something valuable or interesting? 
+    Tell the story. Describe what you found, what you did with it, and how you felt about your decision. 
+    Remember to use past tense in your writing. Provide reasons for your opinions and try to relate them to the values and lessons from the story.
+    """
+    print("Prompt:\n", prompt)
+    # Allow 20 minutes for writing and checking
+    writing_checker_app.launch()
+    time.sleep(20 * 60)
+
+# Main Function to Execute Lesson Plan
+def run_lesson_plan():
+    """
+    Execute the full lesson plan step by step.
+    """
+    print("Starting Lesson Plan...\n")
+    
+    # Step 1: Listening Activity
+    print("Step 1: Listening Activity")
+    pre_listening_vocabulary()
+    while_listening()
+    after_listening()
+    
+    # Step 2: Writing Activity
+    print("Step 2: Writing Activity")
+    writing_activity()
+    
+    print("Lesson Plan Complete!")
+
+# Run the lesson plan
+if __name__ == "__main__":
+    run_lesson_plan()
 
 ## Lesson Plan
 
